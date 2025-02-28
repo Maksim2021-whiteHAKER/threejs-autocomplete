@@ -1,0 +1,51 @@
+{
+  "name": "threejs-autocomplete",
+  "displayName": "THREEJS_AUTOCOMPLETE",
+  "description": "This is a simple extension to help with programming in THREE JS, a simple little library for everyone.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "publisher": "MaxProgrammerComputer",
+  "categories": [
+    "Snippets",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+      "onLanguage:javascript",
+      "onLanguage:typescript"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "javascript",
+        "aliases": ["JavaScript", "javascript"],
+        "extensions": [".js"]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/threejs-snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.97.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.19.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maksim2021-whiteHAKER/threejs-autocomplete"
+  }
+}
