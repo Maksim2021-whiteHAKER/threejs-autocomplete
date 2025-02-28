@@ -4,7 +4,7 @@
   "description": "This is a simple extension to help with programming in THREE JS, a simple little library for everyone.",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.97.0"
   },
   "publisher": "MaxProgrammerComputer",
   "categories": [
