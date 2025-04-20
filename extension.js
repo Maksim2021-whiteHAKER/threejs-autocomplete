@@ -42,60 +42,85 @@ function activate(context) {
         { label: 'DoubleSide', kind: vscode.CompletionItemKind.Constant, detail: 'THREE.DoubleSide' }
     ];
     
-    // Регистрируем провайдер автодополнения
+    // Общая функция для проверки контекста THREE
+    function isThreeContext(linePrefix) {
+        return linePrefix.endsWith('THREE.') || linePrefix.match(/THREE\.\w*$/);
+    }
+
+    // Общая функция для проверки минимальной длины строки
+    function checkMinLength(linePrefix, minLength) {
+        if (linePrefix.length < minLength) {
+            console.log(`Слишком мало символов для проверки (минимум ${minLength} символа)`);
+            return false;
+        }
+        return true;
+    }
+
+    // Регистрируем основной провайдер автодополнения
     const provider = vscode.languages.registerCompletionItemProvider(
         ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
         {
             provideCompletionItems(document, position) {
-                // Получаем текущую строку до позиции курсора
                 const linePrefix = document.lineAt(position).text.substring(0, position.character);
+
+                // Проверяем минимальную длину строки
+                if (!checkMinLength(linePrefix, 4)) {
+                    return undefined;
+                }
+
                 console.log(`Проверка автодополнения. Текст: "${linePrefix}"`);
-                
+
                 // Проверяем, находимся ли мы после "THREE."
-                if (!linePrefix.endsWith('THREE.') && !linePrefix.match(/THREE\.\w*$/)) {
+                if (!isThreeContext(linePrefix)) {
                     console.log('Не в контексте THREE');
                     return undefined;
                 }
-                
+
                 console.log('В контексте THREE, предоставляем автодополнения');
-                
+
                 // Создаем элементы автодополнения
                 return threeCompletions.map(item => {
                     const completionItem = new vscode.CompletionItem(item.label, item.kind);
                     completionItem.detail = item.detail;
-                    
+
                     // Если это метод с параметрами, добавляем сниппет
                     if (item.snippet) {
                         completionItem.insertText = new vscode.SnippetString(item.snippet);
                     }
-                    
+
                     return completionItem;
                 });
             }
         },
         '.' // Триггерный символ
     );
-    
+
     // Добавляем провайдер в подписки контекста
     context.subscriptions.push(provider);
-    
-    // Добавляем тестовый провайдер для проверки
+
+    // Регистрируем тестовый провайдер
     const testProvider = vscode.languages.registerCompletionItemProvider(
         ['javascript', 'typescript'],
         {
             provideCompletionItems(document, position) {
                 const linePrefix = document.lineAt(position).text.substring(0, position.character);
+
+                // Проверяем минимальную длину строки
+                if (!checkMinLength(linePrefix, 4)) {
+                    return undefined;
+                }
+
                 console.log(`Тестовый провайдер вызван. Текст: "${linePrefix}"`);
-                
+
                 // Всегда возвращаем тестовый элемент
                 const testItem = new vscode.CompletionItem('TEST_ITEM', vscode.CompletionItemKind.Text);
                 testItem.detail = 'Тестовый элемент автодополнения';
-                
+
                 return [testItem];
             }
         }
     );
-    
+
     context.subscriptions.push(testProvider);
     console.log('Тестовый провайдер зарегистрирован');
 }
