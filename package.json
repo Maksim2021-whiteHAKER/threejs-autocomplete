@@ -1,7 +1,7 @@
 {
   "name": "threejs-autocomplete",
-  "displayName": "THREEJS_AUTOCOMPLETE",
-  "description": "This is a simple extension to help with programming in THREE JS, a simple little library for everyone.",
+  "displayName": "Three.js Autocomplete",
+  "description": "Автодополнение для библиотеки Three.js",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
@@ -12,22 +12,17 @@
     "Programming Languages"
   ],
   "activationEvents": [
-      "onLanguage:javascript",
-      "onLanguage:typescript"
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
   ],
   "main": "./extension.js",
   "contributes": {
-    "languages": [
+    "commands": [
       {
-        "id": "javascript",
-        "aliases": ["JavaScript", "javascript"],
-        "extensions": [".js"]
-      }
-    ],
-    "snippets": [
-      {
-        "language": "javascript",
-        "path": "./snippets/threejs-snippets.json"
+        "command": "threejs-autocomplete.showInfo",
+        "title": "Three.js: Показать информацию о расширении"
       }
     ]
   },
