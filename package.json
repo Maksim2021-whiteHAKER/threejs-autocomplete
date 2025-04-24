@@ -3,7 +3,7 @@
   "displayName": "Three.js Autocomplete",
   "description": "Автодополнение для библиотеки Three.js",
   "icon": "images/LogoIcon.jpg",
-  "version": "0.0.3",
+  "version": "0.0.3+",
   "engines": {
     "vscode": "^1.97.0"
   },
