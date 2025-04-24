@@ -1,3 +1,7 @@
 node_modules
 .vscode-test/
 *.vsix
+threejs-completions_premium.json
+extension_old.js
+extension.js_threejs-completions.json.txt
+threejs-completions_basic .json and extension.js.txt

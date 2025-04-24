@@ -1,0 +1,184 @@
+{
+    "completions": [
+        {
+            "label": "Vector2",
+            "kind": "class",
+            "detail": "THREE.Vector2",
+            "snippet": "Vector2(${1:x}, ${2:y})",
+            "documentation": {
+                "description": "Двухмерный вектор с координатами x, y.",
+                "params": "x: Number, y: Number",
+                "methods": "add - добавляет компоненты другого вектора к текущему; clone - создает копию текущего вектора; copy - копирует значения другого вектора; length - возвращает длину вектора; normalize - нормализует вектор",
+                "example": "const position = new THREE.Vector2(0, 0)\nМетоды и краткое описание:\nadd - Добавляет компоненты другого вектора к текущему.\nclone - Создает точную копию текущего вектора.\ncopy - Копирует значение координат из другого вектора.\nlength - Возвращает длину (модуль) вектора.\nnormalize - Нормализует вектор, делая его единичным."
+            }
+        },
+        {
+            "label": "Vector3",
+            "kind": "class",
+            "detail": "THREE.Vector3",
+            "snippet": "Vector3(${1:x}, ${2:y}, ${3:z})",
+            "documentation": {
+                "description": "Трёхмерный вектор с координатами x, y, z.",
+                "params": "x: Number, y: Number, z: Number",
+                "methods": "add - добавляет компоненты другого вектора к текущему; cross - вычисляет векторное произведение; dot - скалярное произведение; distanceTo - расстояние между двумя векторами; multiplyScalar - умножение на число",
+                "example": "const position = new THREE.Vector3(0, 0, 0);\nМетоды и краткое описание:\nadd - Добавляет компоненты другого вектора к текущему.\ncross - Вычисляет векторное произведение.\ndot - Скалярное произведение.\ndistanceTo - Расстояние от текущего вектора до указанного.\nmultiplyScalar - Умножает каждую компоненту на заданное число."
+            }
+        },
+        {
+            "label": "Quaternion",
+            "kind": "class",
+            "detail": "THREE.Quaternion",
+            "snippet": "Quaternion()",
+            "documentation": {
+                "description": "Кватернион для представления вращения в трёхмерном пространстве.",
+                "params": "",
+                "methods": "setFromAxisAngle - устанавливает кватернион вращением вокруг оси; slerp - интерполирует кватернионы; inverse - находит обратный кватернион; conjugate - сопряженный кватернион; setFromEuler - задаёт кватернион поворотом Эйлера",
+                "example": "const rotation = new THREE.Quaternion();\nМетоды и краткое описание:\nsetFromAxisAngle - Устанавливает поворот вокруг указанной оси.\nslerp - Интерполирует один кватернион к другому.\ninverse - Инвертирует текущий кватернион.\nconjugate - Получает сопряжённый кватернион.\nsetFromEuler - Устанавливает поворот согласно углам Эйлера."
+            }
+        },
+        {
+            "label": "BoxGeometry",
+            "kind": "class",
+            "detail": "THREE.BoxGeometry",
+            "snippet": "BoxGeometry(${1:width}, ${2:height}, ${3:depth})",
+            "documentation": {
+                "description": "Представляет геометрическую фигуру типа прямоугольника (параллелепипеда).",
+                "params": "width: Number, height: Number, depth: Number",
+                "methods": "center - центрирует объект относительно начала координат; computeBoundingBox - рассчитывает ограничивающий бокс; applyMatrix4 - применяет матрицу трансформации",
+                "example": "const geometry = new THREE.BoxGeometry(1, 1, 1);\nМетоды и краткое описание:\ncenter - Центрирует объект относительно центра системы координат.\ncomputeBoundingBox - Рассчитывает минимально возможный ограничивающий параллелепипед.\napplyMatrix4 - Применяет заданную матрицу преобразования к геометрии."
+            }
+        },
+        {
+            "label": "SphereGeometry",
+            "kind": "class",
+            "detail": "THREE.SphereGeometry",
+            "snippet": "SphereGeometry(${1:radius}, ${2:widthSegments}, ${3:heightSegments})",
+            "documentation": {
+                "description": "Создание сферической геометрии с различными уровнями сегментации.",
+                "params": "radius: Number, widthSegments: Integer, heightSegments: Integer",
+                "methods": "computeBoundingBox - рассчитывает ограничивающую сферу; computeBoundingSphere - определяет минимальный радиус сферы, охватывающей геометрию; center - центрирует сферу относительно начала координат",
+                "example": "const geom = new THREE.SphereGeometry(1, 32, 32);\nМетоды и краткое описание:\ncomputeBoundingBox - Рассчитывает ограничивающий куб для сферы.\ncomputeBoundingSphere - Расчёт минимальной сферы, вмещающей всю геометрию.\ncenter - Центрирование сферы относительно нуля."
+            }
+        },
+        {
+            "label": "PlaneGeometry",
+            "kind": "class",
+            "detail": "THREE.PlaneGeometry",
+            "snippet": "PlaneGeometry(${1:width}, ${2:height})",
+            "documentation": {
+                "description": "Генерация плоской двухмерной геометрии (прямоугольника).",
+                "params": "width: Number, height: Number",
+                "methods": "applyMatrix4 - преобразование плоскости матрицей; rotateX/Y/Z - поворачивает плоскость вдоль осей X,Y,Z; translate - сдвигает плоскость на указанное смещение",
+                "example": "const plane = new THREE.PlaneGeometry(10, 10);\nМетоды и краткое описание:\napplyMatrix4 - Применение матрицы преобразования к плоскости.\nrotateX/Y/Z - Поворот плоскости вдоль соответствующих осей.\ntranslate - Перемещает плоскость в указанном направлении."
+            }
+        },
+        {
+            "label": "MeshBasicMaterial",
+            "kind": "class",
+            "detail": "THREE.MeshBasicMaterial",
+            "snippet": "MeshBasicMaterial({ color: 0x${1:ff0000} })",
+            "documentation": {
+                "description": "Простой материал, отображаемый без учета освещения.",
+                "params": "{ color: Number }",
+                "methods": "clone - создаёт копию материала; dispose - освобождает ресурсы; toJSON - сериализует материал в JSON",
+                "example": "const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });\nМетоды и краткое описание:\nclone - Создает полную копию материала.\ndispose - Освобождает используемые ресурсы памяти.\ntoJSON - Преобразует материал в строку формата JSON."
+            }
+        },
+        {
+            "label": "MeshStandardMaterial",
+            "kind": "class",
+            "detail": "THREE.MeshStandardMaterial",
+            "snippet": "MeshStandardMaterial({ color: 0x${1:ff0000}, metalness: ${2:0.5}, roughness: ${3:0.5} })",
+            "documentation": {
+                "description": "Стандартный физически корректный материал.",
+                "params": "{ color: Number, metalness: Number, roughness: Number }",
+                "methods": "clone - дублирует материал; dispose - удаляет материал из памяти; setValues - обновляет свойства материала",
+                "example": "const material = new THREE.MeshStandardMaterial({ color: 0xff0000, metalness: 0.5, roughness: 0.5 });\nМетоды и краткое описание:\nclone - Дублирует текущий материал.\ndispose - Удаляет материалы из памяти браузера.\nsetValues - Обновляет параметры материала новыми значениями."
+            }
+        },
+        {
+            "label": "Scene",
+            "kind": "class",
+            "detail": "THREE.Scene",
+            "snippet": "Scene()",
+            "documentation": {
+                "description": "Контейнер для всех объектов сцены.",
+                "params": "",
+                "methods": "add - добавляет объекты в сцену; remove - удаляет объект из сцены; updateMatrixWorld - обновляет мировую матрицу; traverse - рекурсивно проходит по иерархии дочерних элементов",
+                "example": "const scene = new THREE.Scene();\nМетоды и краткое описание:\nadd - Добавляет указанный объект в сцену.\nremove - Убирает объект из сцены.\nupdateMatrixWorld - Перевычисляет мировые матрицы всей сцены.\ntraverse - Рекурсивно обрабатывает дерево объектов сцены."
+            }
+        },
+        {
+            "label": "PerspectiveCamera",
+            "kind": "class",
+            "detail": "THREE.PerspectiveCamera",
+            "snippet": "PerspectiveCamera(${1:fov}, ${2:aspect}, ${3:near}, ${4:far})",
+            "documentation": {
+                "description": "Камера с перспективной проекцией.",
+                "params": "fov: Number, aspect: Number, near: Number, far: Number",
+                "methods": "lookAt - направляет камеру на точку; updateProjectionMatrix - обновляет матрицу проекции камеры; reset - сбрасывает настройки камеры к умолчанию",
+                "example": "const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);\nМетоды и краткое описание:\nlookAt - Направляет камеру на выбранную позицию.\nupdateProjectionMatrix - Обновляет матрицу проекции камеры.\nreset - Возвращает камеру к исходному состоянию."
+            }
+        },
+        {
+            "label": "WebGLRenderer",
+            "kind": "class",
+            "detail": "THREE.WebGLRenderer",
+            "snippet": "WebGLRenderer({ antialias: ${1:true} })",
+            "documentation": {
+                "description": "Отвечает за рендеринг сцены на HTML Canvas.",
+                "params": "{ antialias: Boolean }",
+                "methods": "render - визуализация сцены; setSize - меняет размер области вывода; setClearColor - устанавливает фоновый цвет окна; dispose - освобождает ресурсы",
+                "example": "const renderer = new THREE.WebGLRenderer({ antialias: true });\nМетоды и краткое описание:\nrender - Рендерит сцену в WebGL-контекст.\nsetSize - Изменяет размеры выводимого холста.\nsetClearColor - Устанавливает фон сцены.\ndispose - Очищает память, занимаемую рендером."
+            }
+        },
+        {
+            "label": "Mesh",
+            "kind": "class",
+            "detail": "THREE.Mesh",
+            "snippet": "Mesh(${1:geometry}, ${2:material})",
+            "documentation": {
+                "description": "Графическое представление сетчатой модели.",
+                "params": "geometry: THREE.Geometry, material: THREE.Material",
+                "methods": "raycast - проверяет попадание луча на поверхность сетки; lookAt - поворачивает сетку в сторону точки; applyMatrix4 - применяется глобальная трансформация",
+                "example": "const mesh = new THREE.Mesh(new THREE.BoxGeometry(), new THREE.MeshBasicMaterial());\nМетоды и краткое описание:\nraycast - Проверка попадания луча на поверхность сетки.\nlookAt - Ориентирует сетку на определённую точку пространства.\napplyMatrix4 - Применяет матричную трансформацию."
+            }
+        },
+        {
+            "label": "Group",
+            "kind": "class",
+            "detail": "THREE.Group",
+            "snippet": "Group()",
+            "documentation": {
+                "description": "Контейнер для группировки объектов сцены.",
+                "params": "",
+                "methods": "add - добавляет объект в группу; remove - удаляет объект из группы; getObjectByName - ищет объект по имени внутри группы; raycast - проверка пересечения лучей с объектами группы",
+                "example": "const group = new THREE.Group();\ngroup.add(object1);\ngroup.add(object2);\nscene.add(group);\nМетоды и краткое описание:\nadd - Добавляет новый объект в группу.\nremove - Извлекает объект из группы.\ngetObjectByName - Поиск объекта по имени среди потомков.\nraycast - Определяет, пересекаются ли лучи с объектами группы."
+            }
+        },
+        {
+            "label": "AmbientLight",
+            "kind": "class",
+            "detail": "THREE.AmbientLight",
+            "snippet": "AmbientLight(0x${1:ffffff}, ${2:0.5})",
+            "documentation": {
+                "description": "Рассеянный свет, равномерно освещающий всю сцену.",
+                "params": "color: Number, intensity: Number",
+                "methods": "dispose - уничтожает ресурс света; clone - создает копию света; copy - копирует параметры из другого AmbientLight",
+                "example": "const light = new THREE.AmbientLight(0xffffff, 0.5);\nМетоды и краткое описание:\ndispose - Освобождает ресурсы, занятые светом.\nclone - Создает новую копию объекта света.\ncopy - Клонирует данные другого AmbientLight."
+            }
+        },
+        {
+            "label": "DirectionalLight",
+            "kind": "class",
+            "detail": "THREE.DirectionalLight",
+            "snippet": "DirectionalLight(0x${1:ffffff}, ${2:1})",
+            "documentation": {
+                "description": "Направленный свет, имитирующий солнце.",
+                "params": "color: Number, intensity: Number",
+                "methods": "position.set - установка позиции направления света; target.getWorldPosition - получение мировой позиции цели; shadow.mapSize - настройка размера теневой карты",
+                "example": "const light = new THREE.DirectionalLight(0xffffff, 1);\nМетоды и краткое описание:\nposition.set - Установка новой позиции направления света.\ntarget.getWorldPosition - Определение положения целевого объекта в мировом пространстве.\nshadow.mapSize - Настройка разрешения тени."
+            }
+        }
+    ]
+}
